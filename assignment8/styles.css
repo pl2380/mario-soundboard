@@ -1,0 +1,113 @@
+a {
+    padding: 10px;
+}
+
+@font-face {
+    font-family: "DynaPuff";
+    src: url(DynaPuff-VariableFont_wdth\,wght.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    background-image: url(Studio_Ghibli_logo.png);
+    font-family: "DynaPuff";
+    color: #181515;
+    background-color: rgb(208, 192, 192);
+    position: relative;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 1;
+    pointer-events: none;
+}
+
+main, header, footer, .worlds, .item {
+    position: relative;
+    z-index: 2;
+}
+h1 a{
+    text-decoration: none;
+}
+
+h1 a:visited{
+    color: #181515;
+}
+
+#totoro {
+    padding: 10px;
+    margin: 30px;
+}
+
+.totoro{
+    margin-left: 5%;
+}
+
+.noface{
+    margin-right: 5%;
+}
+
+.item{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.item img {
+    width:100%;
+    height: auto;
+}
+
+@media(min-width: 1024px){
+    main{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 10px;
+        margin: 20px;
+        text-align: justify;
+    }
+
+    .worlds{
+        display:grid;
+        grid-template-columns: repeat(3,minmax(0,1fr)) ;
+        grid-template-rows: auto;
+        font-size: 12px;
+        gap: 2.5em;
+    
+    }
+}
+@media(min-width: 768px){
+    .worlds{
+        display:grid;
+        grid-template-columns: repeat(3, minmax(0,  1fr));
+        grid-template-rows: auto;
+        font-size: 12px;
+        gap: 2.5em;
+    
+    }
+}
+@media(prefers-color-scheme:dark){
+    body {
+        color: #e0e0e0;
+        background-color: #232222;
+        background-image: url(Studio_Ghibli_logo2.png);
+    }
+    h1 a:visited {
+        color: #e0e0e0;
+    }
+    h1 a{
+        color: #e0e0e0;
+    }
+    
+}
+
